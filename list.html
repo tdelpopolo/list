@@ -794,7 +794,7 @@
                     },
                     createColumns: function(){
                         var colClasses = ['100', '50'];
-                        
+                        console.log(document.body.scrollWidth);
                         var numCols = document.body.scrollWidth < 200 ? 0 : 1;
                         var colClass = 'col' + colClasses[numCols - 1];
                         
