@@ -265,7 +265,8 @@
                 margin: 0;
                 padding: 5px;
             }
-
+            .col.col25 { width: 25%; }
+            .col.col33 { width: 33.33333%; }
             .col.col50 { width: 50%; }
             .col.col100 { width: 100%; padding: 0px; }
             .widthWrapper {
@@ -792,11 +793,9 @@
                         return $row;
                     },
                     createColumns: function(){
-                        var colClasses = ['100', '50', '33', '25'];
+                        var colClasses = ['100', '50'];
                         
-                        var numCols = Math.floor((document.body.scrollWidth - 20) / 400);
-                        if(!numCols) numCols = 1;
-                        if(numCols > 4) numCols = 4;
+                        var numCols = document.body.scrollWidth < 200 ? 0 : 1;
                         var colClass = 'col' + colClasses[numCols - 1];
                         
                         inputKinks.$columns = [];
