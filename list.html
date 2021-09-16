@@ -1213,10 +1213,12 @@
                             if(!lvlInt) lvlInt = 0;
                             hashValues.push(lvlInt);
                         });
+                        console.log(hashValues.stringify());
                         return inputKinks.encode(Object.keys(colors).length, hashValues);
                     },
                     parseHash: function(){
                         var hash = location.hash.substring(1);
+                        console.log(JSON.parse(window.atob(hash));
                         if(hash.length < 10) return;
                         
                         var values = inputKinks.decode(Object.keys(colors).length, hash);
