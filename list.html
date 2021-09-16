@@ -1213,7 +1213,7 @@
                             if(!lvlInt) lvlInt = 0;
                             hashValues.push(lvlInt);
                         });
-                        console.log(hashValues.stringify());
+                        console.log(JSON.stringify(hashValues));
                         return inputKinks.encode(Object.keys(colors).length, hashValues);
                     },
                     parseHash: function(){
