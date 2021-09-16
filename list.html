@@ -1213,15 +1213,13 @@
                             if(!lvlInt) lvlInt = 0;
                             hashValues.push(lvlInt);
                         });
-                        console.log(JSON.stringify(hashValues));
-                        return inputKinks.encode(Object.keys(colors).length, hashValues);
+                        return window.btoa(JSON.stringify(hashValues));
                     },
                     parseHash: function(){
                         var hash = location.hash.substring(1);
-                        console.log(JSON.parse(window.atob(hash)));
                         if(hash.length < 10) return;
                         
-                        var values = inputKinks.decode(Object.keys(colors).length, hash);
+                        var values = JSON.parse(window.atob(hash));
                         var valueIndex = 0;
                         $('#InputList .choices').each(function(){
                             var $this = $(this);
